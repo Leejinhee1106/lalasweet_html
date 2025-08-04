@@ -1,0 +1,405 @@
+.sec-wrap {
+  width: 100%;
+  padding-top: 80px; // 헤더 높이
+    /* 
+    섹션1 (캐러셀슬라이더)
+    - pc는 수정 x
+    - 모바일부터 미디어쿼리주기
+    */
+    @media (max-width: 431px) {
+        .sec_1 {
+            width: 100%;
+            height: 30vh;
+            max-width: 430px !important;
+            .slide {
+                width: 100%;
+                height: 100%;
+                .carousel-inner{
+                    width: 100%;
+                    height: 100%;
+                    .carousel-item{
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            background-position: right center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+    // 섹션2 (신메뉴)
+    .newitem-section {
+        .image-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 550px;
+
+            .main-image > img {
+                max-width: 460px;
+                aspect-ratio: 3 / 3.5;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+
+            .card-box {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+
+                .card {
+                display: flex;
+                flex-direction: row;
+                width: 30vw;
+                max-width: 400px;
+                max-height: 250px;
+
+                    >img {width: 50%;}
+
+                    .card-body {
+                        box-sizing: border-box;
+                        padding: 20px;
+                        position: relative;
+                        background-color: #016ED5;
+                        color: white;
+
+                        .card-title {font-size: clamp(16px, 1vw, 22px);}
+                        .card-text {font-size: clamp(14px, 0.7vw, 18px);}
+
+                        > span {
+                        position: absolute;
+                        right: 10px;
+                        bottom: 10px;
+                        cursor: pointer;
+
+                            > img {
+                                width: 45px;
+                                height: 45px;
+                            }
+                        }
+                        >span:hover {
+                            border: 2px solid #FE7F02;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 섹션2 미디어쿼리
+        @media (max-width: 1401px) {
+            .image-box {
+                flex-direction: column;
+                height: auto !important;
+
+                .main-image > img {
+                width: auto !important;
+                aspect-ratio: 3 / 3.5;
+                object-fit: cover;
+                border-radius: 20px;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            .image-box {
+                .main-image > img {
+                width: auto !important;
+                aspect-ratio: 3 / 3.5;
+                object-fit: cover;
+                border-radius: 20px;
+                }
+                .card-box {
+                    flex-direction: column;
+                    .card {
+                        width: 100%;
+                        max-height: 200px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 431px) {
+            .image-box {
+                .main-image > img {
+                max-width: 300px !important;
+                aspect-ratio: 3 / 3.5;
+                object-fit: cover;
+                border-radius: 20px;
+                }
+            }
+        }
+        @media (max-width: 376px) {
+            .image-box {
+                .main-image > img {
+                max-width: 280px !important;
+                }
+            }
+            .card-box {
+                .card {
+                    .card-body {
+                        .card-title {font-size: 14px !important;}
+                        .card-text {font-size: 12px !important;}
+                        > span {
+                            > img {
+                                width: 30px !important;
+                                height: 30px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 섹션3 - 세일상품
+    .sale-slider-section {
+        .sale-wrap {
+            display: flex;
+            gap: 5px;
+            .main-image > img {
+            max-width: 460px;
+            aspect-ratio: 3 / 3.5;
+            object-fit: cover;
+            border-radius: 20px;
+            }
+            .sale-box {
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+                > p {
+                    background-color: #016ED5;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 10px;
+                    text-align: center;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                }
+                // 스와이퍼
+                .swiper-container {
+                    .swiper-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        .swiper-slide{
+                            text-align: center;
+                            img{
+                                max-width: 250px;
+                                margin-bottom: 5px;
+                                border-radius: 20px;
+                            }
+                            >h5,p,p{
+                                text-align: left;
+                                padding-left: 20px;
+                            }
+                            .red-text {color: red;}
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 섹션3 미디어쿼리
+        @media (max-width: 1401px) {
+            .sale-wrap {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                // 스와이퍼
+                .swiper-container {
+                    .swiper-wrapper {
+                        .swiper-slide{
+                            img{
+                                max-width: 300px !important;
+                                max-height: 400px !important;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 1024px) {
+           .sale-wrap {
+                // 스와이퍼
+                .swiper-container {
+                    .swiper-wrapper {
+                        .swiper-slide{
+                            img{
+                                max-width: 250px !important;
+                                max-height: 300px !important;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 431px) {
+            .sale-wrap {
+                .main-image {
+                    > img {
+                        max-width: 300px !important;
+                        aspect-ratio: 3 / 3.5;
+                        object-fit: cover;
+                        border-radius: 20px;
+                    }
+                }
+                // 스와이퍼
+                .swiper-container {
+                    .swiper-wrapper {
+                        .swiper-slide{
+                            img{
+                                max-width: 200px !important;
+                                max-height: 250px !important;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 376px) {
+            .sale-wrap {
+                .main-image {
+                    > img {max-width: 280px !important;}
+                }
+                .sale-box {
+                    > p {font-size: 12px;}
+
+                    // 스와이퍼
+                    .swiper-container {
+                        .swiper-wrapper {
+                            .swiper-slide{
+                                img{
+                                    max-width: 140px !important;
+                                    max-height: 200px !important;
+                                    margin-bottom: 10px;
+                                }
+                                > h5 {font-size: 16px;}
+                                >p {font-size: 12px;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 섹션4-인기상품
+    .bestitem-section {
+        .best-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .big-item {
+                display: flex;
+                gap: 20px;
+                flex-wrap: nowrap;
+                .item-box> img {
+                    width: 30vw;
+                    max-width: 400px;
+                    margin-bottom: 5px;
+                }
+            }
+            .small-item {
+                display: flex;
+                gap: 10px;
+                flex-wrap: nowrap;
+                .item-box > img {
+                    width: 23vw;
+                    max-width: 300px;
+                    margin-bottom: 5px;
+                }
+            }
+            .item-box > h5 {
+                font-size: clamp(11px, 2vw, 20px);
+                cursor: pointer;
+            }
+            .item-box > .text-gray {
+                color: #777;
+                font-size: clamp(10px, 2vw, 14px);
+                cursor: pointer;
+            }
+        }
+        button {
+            border-radius: 30px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        // 섹션4 미디어쿼리
+        @media (max-width: 768px) {
+            .best-wrapper {
+                .small-item {
+                    gap: 20px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .item-box > img {
+                        width: 30vw;
+                        max-width: 400px;
+                        margin-bottom: 5px;
+                    }
+                    // 인기아이템 6,7 번 안보이게 숨김
+                    .item-box:nth-child(3),
+                    .item-box:nth-child(4) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @media (max-width: 431px) {
+            .best-wrapper {
+                .big-item {
+                    gap: 10px;
+                    .item-box> img {
+                        width: 30vw;
+                        max-width: 400px;
+                        margin-bottom: 5px;
+                    }
+                }
+                .small-item {
+                   display: none;
+                }
+            }
+        }
+        @media (max-width: 376px) {
+            .best-wrapper {
+               .item-box {
+                > h5 {font-size: 9px;}
+                > p {font-size: 8px !important;}
+               }
+            }
+        }
+    }
+
+    // 섹션5 sns
+    .sns-section {
+        .sns-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            div {
+                max-width: 500px;
+                aspect-ratio: 1/1;
+                >img {
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+        }
+    }
+
+
+    .title {
+        color: #FE7F02;
+        text-align: center;
+        font-size: clamp(24px, 5vw, 48px);
+    }
+}
